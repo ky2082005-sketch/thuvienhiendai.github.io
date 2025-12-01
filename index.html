@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hệ thống Quản lý Thư viện</title>
+    <link rel="stylesheet" href="CSS/style.css">
+</head>
+
+<body>
+
+<script>
+    if (localStorage.getItem("loggedIn") !== "true") {
+        window.location.href = "login.html";
+    }
+</script>
+
+<!-- USER MENU -->
+<div class="user-menu">
+    <div class="user-info-box" onclick="toggleMenu()">
+        <img class="user-avatar" src="https://cdn-icons-png.flaticon.com/512/3177/3177440.png">
+        <span id="usernameTop" class="user-name"></span>
+        <span class="arrow-down">▼</span>
+    </div>
+
+    <div class="menu-dropdown" id="menuDropdown">
+        <button onclick="openProfile()">Hồ sơ cá nhân</button>
+        <button onclick="changePassword()">Đổi mật khẩu</button>
+        <button onclick="logout()">Đăng xuất</button>
+    </div>
+</div>
+    <div class="logout-container">
+        <button class="logout-btn" onclick="logout()">Đăng xuất</button>
+    </div>
+    <div class="user-info">
+    👋 Xin chào, <span id="usernameDisplay"></span>
+    </div>
+
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <div class="logo">
+                    <span class="logo-icon">📚</span>
+                    <h1>Thư viện Hiện đại</h1>
+                </div>
+                <p class="subtitle">Khám phá tri thức - Nâng tầm tương lai</p>
+            </div>
+        </header>
+
+        <!-- Stats Section -->
+        <div class="stats-section">
+            <div class="stat-card">
+                <div class="stat-icon">📖</div>
+                <div class="stat-info">
+                    <div class="stat-number" id="totalBooks">0</div>
+                    <div class="stat-label">Tổng số sách</div>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">📚</div>
+                <div class="stat-info">
+                    <div class="stat-number" id="totalCategories">0</div>
+                    <div class="stat-label">Thể loại</div>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">⭐</div>
+                <div class="stat-info">
+                    <div class="stat-number" id="newestYear">2024</div>
+                    <div class="stat-label">Năm mới nhất</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Search and Filter Section -->
+        <div class="search-section">
+            <div class="search-box">
+                <span class="search-icon">🔍</span>
+                <input type="text" id="searchInput" placeholder="Tìm kiếm theo tên sách hoặc tác giả...">
+            </div>
+            <div class="filter-box">
+                <select id="categoryFilter">
+                    <option value="">📂 Tất cả thể loại</option>
+                    <option value="Văn học">📖 Văn học</option>
+                    <option value="Khoa học">🔬 Khoa học</option>
+                    <option value="Lịch sử">📜 Lịch sử</option>
+                    <option value="Kỹ năng">💡 Kỹ năng</option>
+                    <option value="Thiếu nhi">🎨 Thiếu nhi</option>
+                    <option value="Kinh tế">💰 Kinh tế</option>
+                    <option value="Công nghệ">💻 Công nghệ</option>
+                </select>
+            </div>
+            <button class="btn-add" id="btnShowAddForm">
+                <span class="btn-icon">➕</span>
+                Thêm sách mới
+            </button>
+        </div>
+
+        <!-- Add Book Form -->
+        <div class="form-container" id="addFormContainer">
+            <div class="form-card">
+                <div class="form-header">
+                    <h2>📝 Thêm sách mới</h2>
+                    <button class="close-btn" id="btnCancelAdd">✕</button>
+                </div>
+                <form id="addBookForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="bookTitle">Tên sách *</label>
+                            <input type="text" id="bookTitle" required placeholder="Nhập tên sách">
+                        </div>
+                        <div class="form-group">
+                            <label for="bookAuthor">Tác giả *</label>
+                            <input type="text" id="bookAuthor" required placeholder="Nhập tên tác giả">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="bookCategory">Thể loại *</label>
+                            <select id="bookCategory" required>
+                                <option value="">Chọn thể loại</option>
+                                <option value="Văn học">Văn học</option>
+                                <option value="Khoa học">Khoa học</option>
+                                <option value="Lịch sử">Lịch sử</option>
+                                <option value="Kỹ năng">Kỹ năng</option>
+                                <option value="Thiếu nhi">Thiếu nhi</option>
+                                <option value="Kinh tế">Kinh tế</option>
+                                <option value="Công nghệ">Công nghệ</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="bookYear">Năm xuất bản *</label>
+                            <input type="number" id="bookYear" min="1900" max="2025" required placeholder="2024">
+                            <label for="bookStatus">Trạng thái *</label>
+                                    <select id="bookStatus" required>
+                                    <option value="">Chọn trạng thái</option>
+                                    <option value="Còn">Còn</option>
+                                    <option value="Hết">Hết</option>
+                                    <option value="Sắp có">Sắp có</option>
+                                </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="bookImage">Ảnh bìa sách</label>
+                        <div class="file-input-wrapper">
+                            <input type="file" id="bookImage" accept="image/*">
+                            <label for="bookImage" class="file-input-label">
+                                <span class="file-icon">📁</span>
+                                Chọn ảnh bìa sách
+                            </label>
+                        </div>
+                        <div class="image-preview" id="imagePreview"></div>
+                    </div>
+                    <div class="form-actions">
+                        <button type="submit" class="btn-submit">
+                            <span>✓</span> Thêm sách
+                        </button>
+                        <button type="button" class="btn-cancel" id="btnCancelAddBottom">
+                            <span>✕</span> Hủy
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Books Grid -->
+        <div class="books-section">
+            <div class="books-header">
+                <h2>📚 Bộ sưu tập sách</h2>
+                <div class="view-toggle">
+                    <button class="view-btn active" data-view="grid" title="Xem dạng lưới">
+                        <span>⊞</span>
+                    </button>
+                    <button class="view-btn" data-view="list" title="Xem dạng danh sách">
+                        <span>☰</span>
+                    </button>
+                </div>
+            </div>
+            <div class="books-grid" id="booksGrid">
+                <!-- Books will be dynamically added here -->
+            </div>
+        </div>
+
+        <!-- Edit Modal -->
+        <div class="modal" id="editModal">
+            <div class="modal-content">
+                <div class="form-header">
+                    <h2>✏️ Chỉnh sửa thông tin sách</h2>
+                    <button class="close-btn" id="closeModal">✕</button>
+                </div>
+                <form id="editBookForm">
+                    <input type="hidden" id="editBookId">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="editBookTitle">Tên sách *</label>
+                            <input type="text" id="editBookTitle" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="editBookAuthor">Tác giả *</label>
+                            <input type="text" id="editBookAuthor" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="editBookCategory">Thể loại *</label>
+                            <select id="editBookCategory" required>
+                                <option value="">Chọn thể loại</option>
+                                <option value="Văn học">Văn học</option>
+                                <option value="Khoa học">Khoa học</option>
+                                <option value="Lịch sử">Lịch sử</option>
+                                <option value="Kỹ năng">Kỹ năng</option>
+                                <option value="Thiếu nhi">Thiếu nhi</option>
+                                <option value="Kinh tế">Kinh tế</option>
+                                <option value="Công nghệ">Công nghệ</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="editBookYear">Năm xuất bản *</label>
+                            <input type="number" id="editBookYear" min="-5000" max="2025">
+                            <label for="editBookStatus">Trạng thái *</label>
+                            <select id="editBookStatus" required>
+                                <option value="Còn">Còn</option>
+                                <option value="Hết">Hết</option>
+                                <option value="Sắp có">Sắp có</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="editBookImage">Ảnh bìa sách mới (để trống nếu không đổi)</label>
+                        <div class="file-input-wrapper">
+                            <input type="file" id="editBookImage" accept="image/*">
+                            <label for="editBookImage" class="file-input-label">
+                                <span class="file-icon">📁</span>
+                                Chọn ảnh mới
+                            </label>
+                        </div>
+                        <div class="image-preview" id="editImagePreview"></div>
+                    </div>
+                    <div class="form-actions">
+                        <button type="submit" class="btn-submit">
+                            <span>✓</span> Lưu thay đổi
+                        </button>
+                        <button type="button" class="btn-cancel" id="btnCancelEdit">
+                            <span>✕</span> Hủy
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="./script.js"></script>
+    <script type="module" src="JS/script.js"></script> 
+        
+    
+    <!-- MODAL XEM CHI TIẾT -->
+    <div class="modal" id="detailModal">
+        <div class="modal-content detail-card">
+
+            <button class="close-btn" id="closeDetailModal">✕</button>
+
+            <div class="detail-left">
+                <img id="detailImage" alt="">
+            </div>
+
+            <div class="detail-right">
+                <h2 id="detailTitle"></h2>
+                <p><strong>✍️ Tác giả:</strong> <span id="detailAuthor"></span></p>
+                <p><strong>📂 Thể loại:</strong> <span id="detailCategory"></span></p>
+                <p><strong>📅 Năm xuất bản:</strong> <span id="detailYear"></span></p>
+                <p><strong>📦 Số lượng:</strong> <span id="detailQuantity"></span></p>
+                <p><strong>📘 Trạng thái:</strong> <span id="detailStatus"></span></p>
+
+                <button id="btnEditFromDetail" class="btn-submit">✏️ Sửa sách</button>
+                <button id="btnReadBook" class="btn-primary">📖 Đọc sách</button>
+
+                    <div id="bookReadingArea" class="reading-area" style="display:none;">
+                        <h3>📘 Nội dung sách</h3>
+                    <div id="readingContent"></div>
+            </div>
+        </div>
+    </div>
+<script>
+    // Set username
+    document.getElementById("usernameTop").textContent =
+        localStorage.getItem("currentUser");
+
+    // Dropdown
+    function toggleMenu() {
+        const menu = document.getElementById("menuDropdown");
+        menu.style.display = menu.style.display === "block" ? "none" : "block";
+    }
+
+    // Click outside to close
+    document.addEventListener("click", function (e) {
+        if (!e.target.closest(".user-menu")) {
+            document.getElementById("menuDropdown").style.display = "none";
+        }
+    });
+
+    function openProfile() { alert("🚀 Hồ sơ cá nhân đang cập nhật!"); }
+    function changePassword() { alert("🔐 Tính năng sắp có!"); }
+</script>
+
+<!-- FILE JS -->
+<script src="JS/script.js" type="module"></script>
+<script src="auth.js"></script>
+
+</body>
+</html>
