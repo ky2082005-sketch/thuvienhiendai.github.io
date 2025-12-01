@@ -88,7 +88,7 @@ class LibraryManager {
                 category: 'Kỹ năng',
                 year: 1936,
                 status: 'Còn',
-                image: 'assets/images/Đắc Nhân Tâm.jpg'
+                image: 'assets/images/dac-nhan-tam.jpg'
             },
             {
                 id: Date.now() + 2,
@@ -97,7 +97,7 @@ class LibraryManager {
                 category: 'Lịch sử',
                 year: 2011,
                 status: 'Còn',
-                image: 'assets/images/Sapiens — Yuval Noah Harari.jpg'
+                image: 'assets/images/sapiens-yuval-noah-harari.jpg'
             },
             {
                 id: Date.now() + 3,
@@ -106,7 +106,7 @@ class LibraryManager {
                 category: 'Văn học',
                 year: 1988,
                 status: 'Còn',
-                image: 'assets/images/Nhà Giả Kim — Paulo Coelho.jpg'
+                image: 'assets/images/nha-gia-kim-paulo-coelho.jpg'
             },
             {
                 id: Date.now() + 4,
@@ -115,7 +115,7 @@ class LibraryManager {
                 category: 'Khoa học',
                 year: 2011,
                 status: 'Còn',
-                image: 'assets/images/Tư Duy Nhanh Và Chậm — Daniel Kahneman.jpg'
+                image: 'assets/images/tu-duy-nhanh-va-cham-daniel-kahneman.jpg'
             },
             {
                 id: Date.now() + 5,
@@ -124,7 +124,7 @@ class LibraryManager {
                 category: 'Kinh tế',
                 year: 1997,
                 status: 'Còn',
-                image: 'assets/images/Cha Giàu Cha Nghèo — Robert Kiyosaki.jpg'
+                image: 'assets/images/cha-giau-cha-ngheo.jpg'
             },
             {
                 id: Date.now() + 6,
@@ -133,7 +133,7 @@ class LibraryManager {
                 category: 'Kỹ năng',
                 year: 2018,
                 status: 'Còn',
-                image: 'assets/images/Thói Quen Nguyên Tử — James Clear.jpg'
+                image: 'assets/images/thoi-quen-nguyen-tu-james-clear.jpg'
             },
             {
                 id: Date.now() + 7,
@@ -142,7 +142,7 @@ class LibraryManager {
                 category: 'Lịch sử',
                 year: -500,
                 status: 'Còn',
-                image: 'assets/images/Binh Pháp Tôn Tử — Sun Tzu.jpg'
+                image: 'assets/images/binh-phap-ton-tu-sun-tzu.jpg'
             },
             {
                 id: Date.now() + 8,
@@ -151,7 +151,7 @@ class LibraryManager {
                 category: 'Công nghệ',
                 year: 2008,
                 status: 'Còn',
-                image: 'assets/images/Clean Code — Robert C. Martin.jpg'
+                image: 'assets/images/clean-code-robert-c-martin.jpg'
             },
             {
                 id: Date.now() + 9,
@@ -160,7 +160,7 @@ class LibraryManager {
                 category: 'Thiếu nhi',
                 year: 1943,
                 status: 'Còn',
-                image: 'assets/images/Hoàng Tử Bé — Antoine de Saint-Exupéry.jpg'
+                image: 'assets/images/hoang-tu-be-antoine-de-saint-exupery.jpg'
             },
             {
                 id: Date.now() + 10,
@@ -169,9 +169,8 @@ class LibraryManager {
                 category: 'Kinh tế',
                 year: 2014,
                 status: 'Còn',
-                image: 'assets/images/Zero to One — Peter Thiel.jpg'
+                image: 'assets/images/zero-to-one-peter-thiel.jpg'
             },
-            // 20 quyển mới
             {
                 id: Date.now() + 11,
                 title: 'Nghệ Thuật Bán Hàng',
@@ -179,7 +178,7 @@ class LibraryManager {
                 category: 'Kỹ năng',
                 year: 1982,
                 status: 'Còn',
-                image: 'assets/images/Nghệ Thuật Bán Hàng.jpg'
+                image: 'assets/images/nghe-thuat-ban-hang.jpg'
             },
             {
                 id: Date.now() + 12,
@@ -188,7 +187,7 @@ class LibraryManager {
                 category: 'Kỹ năng',
                 year: 2005,
                 status: 'Còn',
-                image: 'assets/images/Đừng Bao Giờ Đi Ăn Một Mình.jpg'
+                image: 'assets/images/dung-bao-gio-di-an-mot-minh.jpg'
             },
             {
                 id: Date.now() + 13,
@@ -197,7 +196,7 @@ class LibraryManager {
                 category: 'Văn học',
                 year: 2018,
                 status: 'Còn',
-                image: 'assets/images/Tuổi Trẻ Đáng Giá Bao Nhiêu.jpg'
+                image: 'assets/images/tuoi-tre-dang-gia-bao-nhieu.jpg'
             },
             {
                 id: Date.now() + 14,
@@ -206,7 +205,7 @@ class LibraryManager {
                 category: 'Văn học',
                 year: 2019,
                 status: 'Hết',
-                image: 'assets/images/Càng Bình Tĩnh Càng Hạnh Phúc.jpg'
+                image: 'assets/images/cang-binh-tinh-cang-hanh-phuc.jpg'
             },
             {
                 id: Date.now() + 15,
@@ -215,7 +214,7 @@ class LibraryManager {
                 category: 'Văn học',
                 year: 2005,
                 status: 'Còn',
-                image: 'assets/images/Hành Trình Về Phương Đông.jpg'
+                image: 'assets/images/hanh-trinh-ve-phuong-dong.webp'
             },
             {
                 id: Date.now() + 16,
@@ -224,7 +223,7 @@ class LibraryManager {
                 category: 'Khoa học',
                 year: 1988,
                 status: 'Còn',
-                image: 'assets/images/Lược Sử Thời Gian.jpg'
+                image: 'assets/images/luoc-su-thoi-gian.jpg'
             },
             {
                 id: Date.now() + 17,
@@ -233,7 +232,7 @@ class LibraryManager {
                 category: 'Khoa học',
                 year: 2001,
                 status: 'Còn',
-                image: 'assets/images/Vũ Trụ Trong Vỏ Hạt Dẻ.jpg'
+                image: 'assets/images/vu-tru-trong-vo-hat-de.jpg'
             },
             {
                 id: Date.now() + 18,
@@ -242,7 +241,7 @@ class LibraryManager {
                 category: 'Công nghệ',
                 year: 2018,
                 status: 'Còn',
-                image: 'assets/images/Trí Tuệ Nhân Tạo.jpg'
+                image: 'assets/images/tri-tue-nhan-tao.webp'
             },
             {
                 id: Date.now() + 19,
@@ -251,7 +250,7 @@ class LibraryManager {
                 category: 'Kinh tế',
                 year: 2011,
                 status: 'Còn',
-                image: 'assets/images/The Lean Startup.jpg'
+                image: 'assets/images/the-lean-startup.jpg'
             },
             {
                 id: Date.now() + 20,
@@ -260,7 +259,7 @@ class LibraryManager {
                 category: 'Kinh tế',
                 year: 2007,
                 status: 'Hết',
-                image: 'assets/images/Chiến Tranh Tiền Tệ.jpg'
+                image: 'assets/images/chien-tranh-tien-te.jpg'
             },
             {
                 id: Date.now() + 21,
@@ -269,7 +268,7 @@ class LibraryManager {
                 category: 'Lịch sử',
                 year: 2015,
                 status: 'Còn',
-                image: 'assets/images/Lịch Sử Việt Nam.jpg'
+                image: 'assets/images/lich-su-viet-nam.jpg'
             },
             {
                 id: Date.now() + 22,
@@ -278,7 +277,7 @@ class LibraryManager {
                 category: 'Lịch sử',
                 year: 1479,
                 status: 'Còn',
-                image: 'assets/images/Đại Việt Sử Ký Toàn Thư.jpg'
+                image: 'assets/images/dai-viet-su-ky-toan-thu.webp'
             },
             {
                 id: Date.now() + 23,
@@ -287,7 +286,7 @@ class LibraryManager {
                 category: 'Thiếu nhi',
                 year: 1997,
                 status: 'Còn',
-                image: 'assets/images/Harry Potter và Hòn Đá Phù Thủy.jpg'
+                image: 'assets/images/harry-potter-va-hon-da-phu-thuy.jpg'
             },
             {
                 id: Date.now() + 24,
@@ -296,7 +295,7 @@ class LibraryManager {
                 category: 'Thiếu nhi',
                 year: 1941,
                 status: 'Còn',
-                image: 'assets/images/Dế Mèn Phiêu Lưu Ký.jpg'
+                image: 'assets/images/de-men-phieu-luu-ky.webp'
             },
             {
                 id: Date.now() + 25,
@@ -305,7 +304,7 @@ class LibraryManager {
                 category: 'Thiếu nhi',
                 year: 1969,
                 status: 'Còn',
-                image: 'assets/images/Doraemon - Chú Mèo Máy Đến Từ Tương Lai.jpg'
+                image: 'assets/images/doraemon-chu-meo-may-den-tu-tuong-lai.jpg'
             },
             {
                 id: Date.now() + 26,
@@ -314,7 +313,7 @@ class LibraryManager {
                 category: 'Công nghệ',
                 year: 2020,
                 status: 'Còn',
-                image: 'assets/images/Lập Trình Python Cơ Bản.jpg'
+                image: 'assets/images/lap-trinh-python-co-ban.jpg'
             },
             {
                 id: Date.now() + 27,
@@ -323,8 +322,8 @@ class LibraryManager {
                 category: 'Công nghệ',
                 year: 2008,
                 status: 'Sắp có',
-                image: 'assets/images/JAVASCRIPT.jpg'
-            },
+                image: 'assets/images/javascript.jpg'
+            }
         ];
 
         for (const book of defaultBooks) {
@@ -808,5 +807,6 @@ document.getElementById("detailModal").addEventListener("click", (e) => {
 // Initialize the library manager
 const libraryManager = new LibraryManager();
 window.libraryManager = libraryManager;
+
 
 document.documentElement.style.scrollBehavior = 'smooth';
