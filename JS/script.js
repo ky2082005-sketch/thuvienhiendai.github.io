@@ -214,7 +214,7 @@ class LibraryManager {
                 category: 'Văn học',
                 year: 2005,
                 status: 'Còn',
-                image: 'assets/images/hanh-trinh-ve-phuong-dong.webp'
+                image: 'assets/images/hanh-trinh-ve-phuong-dong.jpg'
             },
             {
                 id: Date.now() + 16,
@@ -241,7 +241,7 @@ class LibraryManager {
                 category: 'Công nghệ',
                 year: 2018,
                 status: 'Còn',
-                image: 'assets/images/tri-tue-nhan-tao.webp'
+                image: 'assets/images/tri-tue-nhan-tao.jpg'
             },
             {
                 id: Date.now() + 19,
@@ -277,7 +277,7 @@ class LibraryManager {
                 category: 'Lịch sử',
                 year: 1479,
                 status: 'Còn',
-                image: 'assets/images/dai-viet-su-ky-toan-thu.webp'
+                image: 'assets/images/dai-viet-su-ky-toan-thu.jpg'
             },
             {
                 id: Date.now() + 23,
@@ -295,7 +295,7 @@ class LibraryManager {
                 category: 'Thiếu nhi',
                 year: 1941,
                 status: 'Còn',
-                image: 'assets/images/de-men-phieu-luu-ky.webp'
+                image: 'assets/images/de-men-phieu-luu-ky.jpg'
             },
             {
                 id: Date.now() + 25,
@@ -810,3 +810,4 @@ window.libraryManager = libraryManager;
 
 
 document.documentElement.style.scrollBehavior = 'smooth';
+
